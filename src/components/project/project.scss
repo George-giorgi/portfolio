@@ -1,0 +1,134 @@
+@import "../../wrappscss/global.scss";
+
+.conteiner{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    .wrappSlide{
+        height: 100px;
+        width: 30%;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        overflow-x: scroll;
+        padding: 10px;
+        margin-top: 50px;
+        margin-bottom: 100px;
+        scroll-behavior: smooth;
+        border-radius: 15px;
+        
+        @include mobalie{
+            width: 70%;
+            height: 80px;
+        }
+            .content{
+                min-width:135px;
+                height: 75px;
+                margin-right: 20px;
+                border-radius: 20px;
+                -webkit-box-shadow: 0px 2px 5px 5px rgba(239,187,207,0.6); 
+                box-shadow: 0px 2px 5px 5px rgba(239,187,207,0.6);
+                transition: transform 0.5s;
+                cursor: pointer;
+                position: relative;
+                .spanname{
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%,-50%);
+                  visibility: hidden;
+                }
+                .respons{
+                    display: none;
+                }
+                img{
+                    width: 135px;
+                    height: 75px;
+                    border-radius: 20px;
+                    object-fit: cover;
+                    @include mobalie{
+                        width: 100px;
+                        height: 55px;
+                    }
+                }
+                &.content:last-child{
+                    margin-right: 0;
+                } 
+                @include mobalie{
+                    min-width: 100px;
+                    height: 55px;
+                }
+                &:hover{
+                    transform: scale(1.1);
+                    
+                    .spanname{
+                        visibility: visible;
+                        color: whitesmoke;
+                        font-size: 17px;
+                    }
+                    .respons{
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        z-index: 99;
+                        color: white;
+                        left: 15px;
+                       
+                        font-size: 13px;
+                    }
+                }
+            } 
+            
+    }
+    #svg{
+
+        @include mobalie{
+            width: 150px;
+            height: 80px;
+        }
+        .path{
+            stroke-dasharray: 688.2228393554688;
+            stroke-dashoffset: 688.2228393554688;
+        }
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        font-size: 17px;
+        letter-spacing: 1px;
+        color: rgb(112, 108, 108);
+        p{
+            margin-bottom: 5px;
+        }
+        .linkedin:hover{
+            color: whitesmoke;
+            background: $maincolor4;
+            cursor: pointer;
+            border-radius: 5px;
+            transform: scale(1.2);
+            transition: all 0.5s;
+        }
+       .link{
+           text-decoration: none;
+           color: $maincolor4;
+       }
+
+        
+    }
+    
+}
+
+::-webkit-scrollbar{
+    height: 4px;
+    width: 4px;
+}
+::-webkit-scrollbar-thumb:horizontal{
+    background: $maincolor3;
+    border-radius:2px;
+}
+
+      

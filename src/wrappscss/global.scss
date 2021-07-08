@@ -1,0 +1,12 @@
+$maincolor1: #FFD5CD;
+$maincolor2: #EFBBCF;
+$maincolor3: #C3AED6;
+$maincolor4: #8675A9;
+
+$width: 768px;
+$font: 'Roboto', sans-serif;
+@mixin mobalie {
+    @media (max-width: $width){
+        @content
+    }   
+}

@@ -1,0 +1,81 @@
+@import "../../../wrappscss/global.scss";
+.formconteiner{
+    margin-top: 50px;
+    display: flex;
+    font-family: $font;
+    align-items: center;
+    line-height: 1.5;
+    width: 100vw;
+    @include mobalie{
+        flex-direction: column;
+     }
+    .contact{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        font-size: 20px;
+        padding-left: 100px;
+        color: $maincolor1;
+        @include mobalie{
+            padding-left: 0px;
+            align-items: center;
+            color: $maincolor4;
+            font-weight: 400;
+            font-size: 15px;
+        }
+        .mobile{
+          display: flex;
+          align-items: center;
+          margin-top: 20px;
+          p{
+            margin-left: 10px;
+        }
+        }
+       .email{
+          display: flex;
+          align-items: center;
+          p{
+              margin-left: 10px;
+          }
+       }
+       
+    }
+    .xilva{
+        transition: color 2s;
+        color: $maincolor4;
+    }
+    .about{
+        flex: 1;
+        padding-right: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $maincolor4;
+        @include mobalie{
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            padding: 10px;
+            top: 25%;
+            overflow: hidden;
+            align-items: flex-start;
+        }
+        .proj{
+          text-indent: 15px;
+          transition: all 1s;
+          text-align:justify;
+          letter-spacing: 1px;
+          font-weight: 600;
+          font-size: 17px;
+          @include mobalie{
+              text-align: start;
+              font-size: 12px;
+              text-indent: 0px;
+              overflow-y: scroll;
+              
+          }
+        }
+        
+    }
+}
