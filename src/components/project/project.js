@@ -3,11 +3,12 @@ import {useRef, useState, useEffect} from "react"
 import Contact from "./contanct/contact"
 import { data } from "../../Data"
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+
 export default function Project() {
     const scroll = useRef()
     const [posit, setposit] = useState(0)
     const [contact,setcontact] = useState(false)
-    const [title,settitle]= useState("")
+    const [title,settitle]= useState([])
     const [clientwidth, setclientwidtn] = useState(true)
     const vp = useRef()
     const responsive = useRef()
@@ -30,7 +31,7 @@ export default function Project() {
         const length = vp.current.getTotalLength()
         if(scrolisdashoreba>0 && scrolisdashoreba< maxrightscroll){
             vp.current.style.strokeDashoffset= (length - scrolisdashoreba)
-        }else if(scrolisdashoreba == 0){
+        }else if(scrolisdashoreba === 0){
             vp.current.style.strokeDashoffset=length
         }else{
             vp.current.style.strokeDashoffset=length
@@ -48,32 +49,31 @@ export default function Project() {
    
     const leavhandler =()=>{
        
-        settitle("")
+        settitle([])
        
     }
     useEffect(()=>{
         const width = responsive.current.clientWidth
         width<768 && setclientwidtn(false)
     },[clientwidth])
-
     return (
         <>
         <div ref={responsive} className = "conteiner" onWheel={(e)=>handler(e)} onScrollCapture={(e)=>{scrollhendler(e)}} >
             <div className="wrappSlide" ref={scroll}>
                 {
                     data.map((item)=>{
-
+                        
                         return(
                             <div 
                             key={item.id} 
                             className="content"
-                            onMouseOver={()=>hoverhandler(item.title)}
+                            onMouseOver={()=>hoverhandler(item.Dep)}
                             onMouseLeave={leavhandler}
-                            >    <a href={clientwidth&&item.link} target="_blank">
-                                <img src ={item.img} />
+                            >    <a href={clientwidth&&item.link} target="_blank" rel="noreferrer">
+                                <img src ={item.img} alt="img" />
                                 <span className="spanname">{item.name}</span>
                                 </a>
-                                <a href ={clientwidth == false&& item.link} target="_blank">
+                                <a href ={clientwidth == false&& item.link} target="_blank" rel="noreferrer">
                                  <p className="respons"> {clientwidth == false&& "Click and see"}</p>
                                 </a>
                             </div>

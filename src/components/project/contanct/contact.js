@@ -1,7 +1,16 @@
 import "./contact.scss"
 import {Email, MobileFriendly} from '@material-ui/icons/';
 
+const Dep = ({item})=>{
+
+    return(
+        <p>{item}</p>
+    )
+ }
+
 export default function contact({xilva , title}) {
+    const info = title.slice()
+    const desc = info.pop()
     
     return (
         <div className ="formconteiner">
@@ -18,10 +27,20 @@ export default function contact({xilva , title}) {
                 </div>
            </div>
            <div className="about">
-               <p className="proj">
-                {title}
-              
-               </p>
+               {info.length > 0 ? <span style={{marginLeft:"7px"}}>Dependencies</span>: ""}
+               
+               <div className ="depWrapper">
+               {
+                  info.map((item, i)=>{
+                      return(
+                          <Dep key={i} item={item} />
+                      )
+                  })
+               }
+               </div>
+               {info.length > 0 ?<span style={{marginLeft:"7px", borderTop:"1px solid whitesmoke"}}
+               >About: {desc}</span>: ""}
+               
            </div>
         </div>
     )

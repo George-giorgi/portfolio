@@ -49,8 +49,7 @@
         flex: 1;
         padding-right: 100px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
         color: $maincolor4;
         @include mobalie{
             position: absolute;
@@ -60,22 +59,41 @@
             top: 25%;
             overflow: hidden;
             align-items: flex-start;
+            font-size: 12px;
         }
-        .proj{
-          text-indent: 15px;
-          transition: all 1s;
-          text-align:justify;
-          letter-spacing: 1px;
-          font-weight: 600;
-          font-size: 17px;
-          @include mobalie{
-              text-align: start;
-              font-size: 12px;
-              text-indent: 0px;
-              overflow-y: scroll;
-              
-          }
+        .depWrapper{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            P{
+                background-color: whitesmoke;
+                margin: 7px;
+                border-radius: 10px;
+                padding: 3px;
+                animation: scal 2s forwards;
+                @include mobalie{
+                    margin: 3px;
+                }
+               
+                @keyframes scal {
+                  0%{
+                      transform: scale(0.5);
+                      opacity: 0.5;
+                  }
+                  50%{
+                    transform: scale(1.05);
+                    opacity: 1;
+                  }
+                   70%{
+                    transform: scale(0.8);
+                    opacity: 0.2;
+                   }
+                   100%{
+                    transform: scale(1);
+                    opacity: 1;
+                   }
+                }
+            }
         }
-        
     }
 }
