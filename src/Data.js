@@ -2,7 +2,7 @@ const PF = process.env.REACT_APP_PUBLIC_FOLDER
 export const data = [
     {
         id:1,
-        img:`${PF}quiz.jpg`,
+        img:`imge/quiz.jpg`,
         Dep: ["React", "React-Dom", "Sass", "material-ui","ქვიზი სამი კითხვით, დანარჩენის მოფიქრება დამეზარა, დააკლიკე"],
         link: "https://george-giorgi.github.io/modern_quize/",
         name:"Quiz"
@@ -36,7 +36,7 @@ export const data = [
     },
     {
         id:6,
-        img:`${PF}5.jpeg`,
+        img:`imge/5.jpeg`,
         Dep:  ["", "comming soon"],
         // link: "https://george-giorgi.github.io/modern_quize/"
     },
